@@ -3,9 +3,7 @@ package com.medcloud.md;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
-import java.text.SimpleDateFormat;
 import java.time.LocalDate;
-import java.util.Date;
 import java.util.Scanner;
 
 @SpringBootApplication
@@ -22,22 +20,22 @@ public class MdApplication {
         md = new Infos();
 
         System.out.print("Informe seu nome: \n");
-        md.nome = ler.nextLine();
+        md.setNome(ler.nextLine());
 
         System.out.print("Seu Email: \n");
-        md.email = ler.nextLine();
+        md.setEmail(ler.nextLine());
 
         System.out.print("Seu endereço: \n");
-        md.endereco = ler.nextLine();
+        md.setEndereco(ler.nextLine());
 
         System.out.print("Sua idade: \n");
-        md.idade = ler.nextInt();
+        md.setIdade(ler.nextInt());
 
         md.somaDtNasc = year - md.idade;
 
-        System.out.printf("Seu nome é: " + md.nome +"\n" +
-                "Você nasceu no ano: " + md.somaDtNasc +"\n" +
-                "Possui o email: " + md.email +"\n" +
-                "E mora no endereço: " + md.endereco);
+        System.out.printf("Seu nome é: " + md.getNome() +"\n" +
+                "Você nasceu no ano: " + md.getSomaDtNasc() +"\n" +
+                "Possui o email: " + md.getEmail() +"\n" +
+                "E mora no endereço: " + md.getEndereco());
     }
 }
