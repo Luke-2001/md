@@ -1,4 +1,4 @@
-package com.medcloud.md;
+package mds;
 
 import lombok.Getter;
 import lombok.Setter;

@@ -1,16 +1,18 @@
-package com.medcloud.md;
+package mds;
 
-import org.springframework.boot.SpringApplication;
+import Sqls.infosql;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
+import java.sql.SQLException;
 import java.time.LocalDate;
+import java.util.HashMap;
+import java.util.Map;
 import java.util.Scanner;
 
 @SpringBootApplication
 public class MdApplication {
 
-    public static void main(String[] args) {
-        SpringApplication.run(MdApplication.class, args);
+    public void findMd() throws SQLException {
         Scanner ler = new Scanner(System.in);
 
         LocalDate current_date = LocalDate.now();
@@ -33,9 +35,19 @@ public class MdApplication {
 
         md.somaDtNasc = year - md.idade;
 
-        System.out.printf("Seu nome é: " + md.getNome() +"\n" +
-                "Você nasceu no ano: " + md.getSomaDtNasc() +"\n" +
-                "Possui o email: " + md.getEmail() +"\n" +
-                "E mora no endereço: " + md.getEndereco());
+        md.getCode();
+
+        adiciona(md);
+    }
+
+    public String adiciona(Infos infos) {
+
+        Map<String, Object> params = new HashMap<>();
+        params.put("nome", infos.getNome());
+        params.put("email", infos.getEmail());
+        params.put("endereco", infos.getEndereco());
+        params.put("idade", infos.getIdade());
+
+         return infosql.inser_infos;
     }
 }
