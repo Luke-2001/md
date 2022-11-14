@@ -8,7 +8,7 @@ import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
-@Table(name = "infos")
+@Table(name = "INFORMACOES")
 @Entity
 @Getter
 @Setter
@@ -29,5 +29,5 @@ public class Infos {
     public String endereco;
 
     @Column(name = "code")
-    public Long code;
+    public Integer code;
 }

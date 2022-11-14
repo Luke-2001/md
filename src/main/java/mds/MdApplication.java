@@ -35,8 +35,6 @@ public class MdApplication {
 
         md.somaDtNasc = year - md.idade;
 
-        md.getCode();
-
         adiciona(md);
     }
 
@@ -47,7 +45,8 @@ public class MdApplication {
         params.put("email", infos.getEmail());
         params.put("endereco", infos.getEndereco());
         params.put("idade", infos.getIdade());
+        params.put("somaDtNasc", infos.getSomaDtNasc());
 
-         return infosql.inser_infos;
+         return infosql.inser_informacoes;
     }
 }

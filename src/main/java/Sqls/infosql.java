@@ -1,17 +1,17 @@
 package Sqls;
 
 public class infosql {
-    public static final String find_by_infos = """
+    public static final String find_by_informacoes = """
             SELECT
                 *
             FROM
-                LK.INFOS  
+                informacoes;
             """;
 
-    public static final String inser_infos = """
+    public static final String inser_informacoes = """
             INSERT INTO
-               LK.INFOS (NOME, IDADE, EMAIL, ENDERECO)
+               informacoes (nome, idade, email, endereco, somaDtNasc)
             VALUES
-                (:NOME, :IDADE, :EMAIL, :ENDERECO);
+                (:nome, :idade, :email, :endereco, :somaDtNasc);
             """;
 }

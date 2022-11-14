@@ -36,13 +36,13 @@ public class BdConex {
 
         Statement st = con.conexao.createStatement();
 
-        st.execute(infosql.find_by_infos);
+        st.execute(infosql.find_by_informacoes);
 
         ResultSet rs = st.getResultSet();
 
         while (rs.next()) {
-            System.out.println(rs.getString("CODE") + " | " + rs.getString("NOME") + " | " + rs.getString("IDADE")
-                    + " | " + rs.getString("SOMADTNASC") + " | " + rs.getString("EMAIL") + " | " + rs.getString("ENDERECO"));
+            System.out.println(rs.getString("NOME") + " | " + rs.getInt("IDADE")
+                    + " | " + rs.getInt("SOMADTNASC") + " | " + rs.getString("EMAIL") + " | " + rs.getString("ENDERECO"));
         }
     }
 }
